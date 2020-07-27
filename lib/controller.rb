@@ -15,6 +15,12 @@ class ApplicationController < Sinatra::Base
   get '/gossips/new/' do
     erb :new_gossip
   end
+  
+  get '/gossips/:id' do
+    # matches "GET /hello/foo" and "GET /hello/bar"
+    # params['name'] is 'foo' or 'bar'
+    "This is gossip # #{params['id']}!"
+  end
 
   post '/gossips/new/' do
     Gossip.new(params["gossip_author"],params["gossip_description"]).save
