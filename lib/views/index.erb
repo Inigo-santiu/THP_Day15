@@ -18,11 +18,12 @@
   </head>
     <body>
       <h1>The List!</h1>
-      <% gossips.each do |gossip| %>
+      <% gossips.each_with_index do |gossip, index| %>
       <p>
         <%= gossip.author %><br/>
-        <%= gossip.description %>
+        <%= gossip.description %><br/>
       </p>
+      <a href="/gossips/<%= index + 1 %>">Rumour<%= index +1 %></a>
       <% end %>
     </body>
   </head>

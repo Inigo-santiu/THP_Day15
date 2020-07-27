@@ -1,0 +1,15 @@
+<html>
+  <head>
+  <title>Page of the Rumours!</title>
+  </head>
+  <body>
+    <h1>This is Rumour number <%= params["id"] %></h1>
+    <h3>The person responsible</h3>
+    <p> <%= gossips.author %><br/>
+    <h3>Their slanderous words</h3>
+    <p> <%= gossips.description %><br/>
+    <br/>
+    
+    <a href="/gossips/new/">This will return you to the rumour registration page</a>
+  </body>
+</html>

@@ -16,10 +16,14 @@ class ApplicationController < Sinatra::Base
     erb :new_gossip
   end
   
+  # get '/gossips/:id' do
+  #   # matches "GET /hello/foo" and "GET /hello/bar"
+  #   # params['name'] is 'foo' or 'bar'
+  #   "This is gossip # #{params['id']}!"
+  # end
+
   get '/gossips/:id' do
-    # matches "GET /hello/foo" and "GET /hello/bar"
-    # params['name'] is 'foo' or 'bar'
-    "This is gossip # #{params['id']}!"
+    erb :show, locals: {gossips: Gossip.find(params["id"])}
   end
 
   post '/gossips/new/' do

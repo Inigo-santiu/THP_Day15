@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 require 'csv'
 
 class Gossip
@@ -23,12 +23,12 @@ attr_accessor :author, :description
     return all_gossips
   end
 
-  def find(id)
-    all_gossips.find(id)
+  def self.find(id)
+    all[id.to_i]
   end
 
 
-binding.pry
+#binding.pry
 end
 
 #REMEMBER : To activate 'self' in the pry, type Gossip.all
