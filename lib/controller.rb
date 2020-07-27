@@ -1,6 +1,8 @@
 # require 'bundler'
 # Bundler.require
 
+require 'gossip'
+
 class ApplicationController < Sinatra::Base
   get '/' do
     erb :index # <html><body></body></html>
@@ -8,6 +10,10 @@ class ApplicationController < Sinatra::Base
 
   get '/gossips/new/' do
     erb :new_gossip
+  end
+
+  post '/gossips/new/' do
+    Gossip.new().save
   end
   # run! if app_file == $0
 end 
