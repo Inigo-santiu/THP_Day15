@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/gossips/new/' do
-    Gossip.new().save
+    Gossip.new("super_auteur", "super gossip").save
   end
   # run! if app_file == $0
 end 
